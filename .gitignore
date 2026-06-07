@@ -1,0 +1,25 @@
+# .NET
+bin/
+obj/
+*.user
+[Dd]ebug/
+[Rr]elease/
+artifacts/
+
+# Node / frontend
+node_modules/
+dist/
+dist-ssr/
+*.local
+
+# Env / secrets
+.env
+*.env.local
+
+# IDE / OS
+.vs/
+.vscode/
+.idea/
+*.suo
+.DS_Store
+Thumbs.db

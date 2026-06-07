@@ -1,0 +1,80 @@
+:root {
+  --bg: #0f172a;
+  --panel: #1e293b;
+  --panel-2: #273449;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --danger: #ef4444;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+input {
+  background: var(--panel-2);
+  border: 1px solid #334155;
+  color: var(--text);
+  padding: 0.55rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+}
+input:focus {
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.95rem;
+  background: var(--accent);
+  color: white;
+  transition: background 0.15s ease;
+}
+button:hover {
+  background: var(--accent-hover);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+button.link {
+  background: none;
+  color: var(--accent);
+  padding: 0.3rem;
+}
+button.link:hover {
+  background: none;
+  text-decoration: underline;
+}
+
+button.danger {
+  background: transparent;
+  color: var(--muted);
+}
+button.danger:hover {
+  background: var(--danger);
+  color: white;
+}
+
+.muted {
+  color: var(--muted);
+}
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}

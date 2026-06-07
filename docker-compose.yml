@@ -1,0 +1,32 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: taskflow
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  api:
+    build:
+      context: ./backend/TaskFlow.Api
+    environment:
+      ConnectionStrings__Default: "Host=db;Port=5432;Database=taskflow;Username=postgres;Password=postgres"
+      Jwt__Key: "CHANGE_ME_super_secret_key_at_least_32_characters_long_0909"
+      ASPNETCORE_URLS: "http://+:8080"
+    ports:
+      - "5080:8080"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

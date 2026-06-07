@@ -1,0 +1,152 @@
+/* --- Auth --- */
+.auth-wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.auth-card {
+  width: 320px;
+  background: var(--panel);
+  padding: 2rem;
+  border-radius: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.auth-card h1 {
+  margin: 0;
+  text-align: center;
+}
+
+/* --- App shell --- */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 1.4rem;
+  background: var(--panel);
+  border-bottom: 1px solid #334155;
+}
+.brand {
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+.user {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+main {
+  padding: 1.4rem;
+}
+
+/* --- Board list --- */
+.new-board {
+  display: flex;
+  gap: 0.6rem;
+  margin-bottom: 1.4rem;
+}
+.new-board input {
+  flex: 1;
+  max-width: 320px;
+}
+.boards {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+.board-tile {
+  display: flex;
+  background: var(--panel);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.tile-open {
+  flex: 1;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
+  padding: 1.1rem;
+  border-radius: 0;
+}
+.tile-open:hover {
+  background: var(--panel-2);
+}
+
+/* --- Board view --- */
+.board-head {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+.board-head h2 {
+  margin: 0;
+  flex: 1;
+}
+.columns {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+}
+.column {
+  background: var(--panel);
+  border-radius: 12px;
+  width: 280px;
+  flex-shrink: 0;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.column-head {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+.count {
+  color: var(--muted);
+  font-weight: 400;
+}
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 8px;
+}
+.card {
+  background: var(--panel-2);
+  border-radius: 8px;
+  padding: 0.6rem 0.7rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: grab;
+  border: 1px solid transparent;
+}
+.card:hover {
+  border-color: var(--accent);
+}
+.card-del {
+  background: none;
+  color: var(--muted);
+  padding: 0 0.3rem;
+}
+.card-del:hover {
+  background: none;
+  color: var(--danger);
+}
+.add-card input,
+.new-column input {
+  width: 100%;
+}
